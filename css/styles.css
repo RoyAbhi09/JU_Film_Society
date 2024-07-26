@@ -127,7 +127,6 @@
   text-decoration: none;
   font-weight: 900;
 }
-
 @media (max-width: 768px) {
   .footer .box-container {
     padding: 0 1rem;
@@ -163,7 +162,6 @@
     font-size: 0.8rem; 
   }
 }
-
 /* Contact Us Styling */
 .location .box-container {
   display: grid;
@@ -183,14 +181,15 @@
   background: black;
   color: white;
 }
+
 .location .box-container .box .title {
   background: var(--main-color);
   color: black;
   padding: 1.5rem 0;
-  font-size: 1.5rem;
+  font-size: 2rem; 
 }
 .location .box-container .box .content {
-  font-size: 0.9rem;
+  font-size: 1.2rem; 
   color: black;
   padding: 1rem 0;
   line-height: 2;
@@ -216,10 +215,10 @@
       padding: 1rem;
   }
   .location .box-container .box .title {
-      font-size: 1.2rem;
+      font-size: 1.8rem; 
   }
   .location .box-container .box .content {
-      font-size: 0.8rem;
+      font-size: 1rem; 
   }
 }
 @media (max-width: 480px) {
@@ -227,10 +226,10 @@
       padding: 0.5rem;
   }
   .location .box-container .box .title {
-      font-size: 1rem;
+      font-size: 1.5rem; 
   }
   .location .box-container .box .content {
-      font-size: 0.7rem;
+      font-size: 0.9rem; 
   }
 }
 
