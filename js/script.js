@@ -39,7 +39,6 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 document.addEventListener('DOMContentLoaded', function () {
     var backToTopButton = document.querySelector('.back-to-top');
-
     window.addEventListener('scroll', function () {
         if (window.scrollY > 100) { // Adjust the value to your preference
             backToTopButton.style.display = 'flex';
@@ -47,9 +46,9 @@ document.addEventListener('DOMContentLoaded', function () {
             backToTopButton.style.display = 'none';
         }
     });
-
     backToTopButton.addEventListener('click', function (e) {
         e.preventDefault();
         window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 });
+
