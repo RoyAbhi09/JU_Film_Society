@@ -20,7 +20,6 @@
     const $dropdownToggle = $(".dropdown-toggle");
     const $dropdownMenu = $(".dropdown-menu");
     const showClass = "show";
-    
     $(window).on("load resize", function() {
         if (this.matchMedia("(min-width: 992px)").matches) {
             $dropdown.hover(
@@ -48,18 +47,27 @@
             $('.back-to-top').fadeOut('slow');
         }
     });
-    $(".header-carousel").owlCarousel({
-        autoplay: true,
-        smartSpeed: 2000,
-        items: 1,
-        dots: false,
-        loop: true,
-        nav : true,
-        navText : [
-            '<i class="bi bi-chevron-left"></i>',
-            '<i class="bi bi-chevron-right"></i>'
-        ]
-    }); 
+    $(document).ready(function(){
+        var owl = $('.owl-carousel');
+        owl.owlCarousel({
+            items: 1,
+            loop: true,
+            margin: 10,
+            nav: false,
+            dots: false,
+            autoplay: true,
+            autoplayTimeout: 2000,
+            autoplayHoverPause: true,
+            smartSpeed: 1000 
+        });
+        // Custom Navigation Events
+        $('.carousel-next').click(function() {
+            owl.trigger('next.owl.carousel');
+        });
+        $('.carousel-prev').click(function() {
+            owl.trigger('prev.owl.carousel');
+        });
+    });
 })(jQuery);
 
 
