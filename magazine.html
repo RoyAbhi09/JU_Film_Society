@@ -6,24 +6,48 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
-    <!-- Favicon -->
     <link href="img/logo.png" rel="icon">
-    <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
-    <!-- Icon Font Stylesheet -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
-    <!-- Libraries Stylesheet -->
     <link href="lib/animate/animate.min.css" rel="stylesheet">
     <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <!-- Customized Bootstrap Stylesheet -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
-    <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
-    <!-- Custom Stylesheet -->
+    <style>    /* Bottom to Top Styling for About, Magazine, Past Events, Contact Pages */
+        .btn-about-top {
+            width: 50px;  
+            height: 50px; 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0; 
+            border-radius: 50%; 
+            font-size: 24px; 
+            background-color: black;
+            color: white;
+            position: fixed;
+            bottom: 20px; 
+            right: 20px; 
+            display: none; 
+            z-index: 1000; 
+        }
+        .btn-about-top:hover,
+        .btn-about-top:focus,
+        .btn-about-top:active {
+            background-color: black; 
+            color: white; 
+            text-decoration: none; 
+            outline: none; 
+            box-shadow: none;
+        }
+        .btn-about-top i {
+            margin: 0;
+        }
+        </style>
 </head>
 <body>
     <!-- Spinner Start -->
@@ -84,7 +108,7 @@
                     <div class="col-md-6">
                         <div class="description typewriter-font">
                             <h3><strong>Chiaroscuro</strong></h3>
-                            <p><strong>Chiaroscuro, our vibrant film magazine by Jadavpur University Film Society, celebrates the multifaceted artistry of cinema. Just like the dramatic interplay of light and dark in classic films, we hope our magazine embodies the essence of light and shadow in storytelling. The labor of our love, Chiaroscuro, aims to enrich the cultural discourse by cultivating the understanding and appreciation of films among readers.</strong></p>
+                            <p><strong>Chiaroscuro, our vibrant film magazine by the Jadavpur University Film Society, celebrates the multifaceted artistry of cinema. Just like the dramatic interplay of light and dark in classic films, we hope our magazine embodies the essence of light and shadow in storytelling. The labor of our love, Chiaroscuro, aims to enrich the cultural discourse by cultivating the understanding and appreciation of films among readers.</strong></p>
                         </div>
                     </div>
                 </div>
@@ -106,7 +130,6 @@
             <a href="contact.html"><i class="fas fa-arrow-right"></i>Contact</a>
             <a href="JUFS_guidelines.pdf" download><i class="fas fa-arrow-right"></i>Terms and Conditions</a>
         </div>
-
         <div class="box typewriter-font">
             <h3>Contact Info</h3>
                 <a href="mailto:jadavpuruniversityfilmsociety@gmail.com"><i class="fas fa-envelope"></i> For any queries, mail us at jadavpuruniversityfilmsociety@gmail.com
@@ -115,7 +138,6 @@
                 <i class="fas fa-map-marker-alt"></i> Address: Jadavpur University,188, Raja Subodh Chandra Mallick Rd,Jadavpur, Kolkata, West Bengal 700032
             </a>
         </div>
-
 <div class="box typewriter-font">
             <h3>Follow Us</h3>
             <a href="https://www.facebook.com/jadavpuruniversityfilmsociety">
@@ -131,17 +153,32 @@
 </section>
 <!-- Footer End -->
 <!-- Back to Top -->
-    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
-<!-- JavaScript Libraries -->
+<a href="#" class="btn btn-lg btn-primary btn-about-top"><i class="bi bi-arrow-up"></i></a>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="lib/wow/wow.min.js"></script>
     <script src="lib/easing/easing.min.js"></script>
     <script src="lib/waypoints/waypoints.min.js"></script>
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-
-<!-- Template Javascript -->
     <script src="js/main.js"></script>
     <script src="js/script.js"></script>
+    <!-- Back to top JS code for About, Magazine, Past events and Contact Page -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var backToTopButton = document.querySelector('.btn-about-top');
+            window.addEventListener('scroll', function () {
+                if (window.scrollY > 100) 
+                { 
+                    backToTopButton.style.display = 'flex';
+                } else {
+                    backToTopButton.style.display = 'none';
+                }
+            });
+            backToTopButton.addEventListener('click', function (e) {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        });
+    </script>
 </body>
 </html>
