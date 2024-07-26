@@ -272,8 +272,7 @@
 }
 
 /* Back to Top Button Styling */
-.btn-lg-square 
-{
+.btn-lg-square {
     width: 50px;  
     height: 50px; 
     display: inline-flex;
@@ -283,26 +282,28 @@
     border-radius: 50%; 
     font-size: 24px; 
     background-color: black;
-    color:white;
+    color: white;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none; 
+    z-index: 1000; 
 }
 .btn-lg-square:hover,
 .btn-lg-square:focus,
-.btn-lg-square:active 
-{
+.btn-lg-square:active {
     background-color: black; 
     color: white; 
     text-decoration: none; 
     outline: none; 
     box-shadow: none;
 }
-.btn-lg-square i 
-{
+.btn-lg-square i {
     margin: 0;
 }
 .btn-lg-square {
     background-color: black !important;
 }
-
 /* About Us  Part Styling*/
 .writeup-description {
     border: none; 
