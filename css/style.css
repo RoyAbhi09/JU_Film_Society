@@ -179,6 +179,53 @@
 .bg-black {
     background-color: #000000 !important;
 }
+.carousel-nav {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    z-index: 10;
+    padding: 0 30px;
+}
+
+.carousel-prev, .carousel-next {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #fff;
+    font-size: 32px;
+}
+
+.carousel-prev:hover, .carousel-next:hover {
+    color: #ccc;
+}
+
+.carousel-prev {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.carousel-next {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+@media (max-width: 768px) {
+    .carousel-nav {
+        top: 45%;
+        padding: 0 15px;
+    }
+    
+    .carousel-prev, .carousel-next {
+        font-size: 28px;
+    }
+}
 
 /*** Genres styling ***/
 .service-item {
@@ -275,7 +322,7 @@
 .btn-lg-square {
     width: 50px;  
     height: 50px; 
-    display: inline-flex;
+    display: flex; 
     align-items: center;
     justify-content: center;
     padding: 0; 
@@ -299,10 +346,7 @@
     box-shadow: none;
 }
 .btn-lg-square i {
-    margin: 0;
-}
-.btn-lg-square {
-    background-color: black !important;
+    margin: 0; 
 }
 /* About Us  Part Styling*/
 .writeup-description {
