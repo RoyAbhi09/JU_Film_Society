@@ -17,6 +17,37 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
+    <style>    /* Bottom to Top Styling for About, Magazine, Past Events, Contact Pages */
+        .btn-about-top {
+            width: 50px;  
+            height: 50px; 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0; 
+            border-radius: 50%; 
+            font-size: 24px; 
+            background-color: black;
+            color: white;
+            position: fixed;
+            bottom: 20px; 
+            right: 20px; 
+            display: none; 
+            z-index: 1000; 
+        }
+        .btn-about-top:hover,
+        .btn-about-top:focus,
+        .btn-about-top:active {
+            background-color: black; 
+            color: white; 
+            text-decoration: none; 
+            outline: none; 
+            box-shadow: none;
+        }
+        .btn-about-top i {
+            margin: 0;
+        }
+        </style>
 </head>
 <body>
     <!-- Spinner Start -->
@@ -29,7 +60,6 @@
     <!-- Navbar Start -->
     <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
         <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
-            <!-- Replace the favicon with your custom image -->
             <img src="img/logo.png" alt="Your Image" style="width: 40px; height: 40px; object-fit: cover; margin-right: 10px;">
             <h2 class="m-0 text-primary" style="font-family: 'Courier Prime', Courier, monospace; color: black !important;">Jadavpur University Film Society</h2>
         </a>
@@ -75,12 +105,12 @@
                     <div class="box typewriter-font">
                         <h3 class="title"><strong>LOCATION ADDRESS</strong></h3>
                         <p class="content">
-                            <strong>1st Floor, Amenities Centre, </strong>
+                            <strong>OPT Hall</strong>
                             <br>
-                            <strong>Jadavpur University, </strong>
+                            <strong>Jadavpur University,</strong>
                             <br>
                             <strong>188, Raja Subodh Chandra Mallick Rd, </strong>
-                            <br><Strong>Jadavpur, Kolkata, West Bengal 700032</Strong>
+                            <br><Strong>Jadavpur,Kolkata,West Bengal-700032</Strong>
                         </p>
                         <h3 class="title"><strong>EMAIL</strong></h3>
                         <p class="content">
@@ -89,7 +119,7 @@
                     </div>
                     <div class="box typewriter-font">
                         <h3 class="title"><strong>MAP</strong></h3>
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3686.1412719607897!2d88.36883737406541!3d22.498882179544264!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a0271237f28abe9%3A0xd047bab0c8bfb11c!2sJadavpur%20University!5e0!3m2!1sen!2sin!4v1721290132214!5m2!1sen!2sin"></iframe> 
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3686.1105178132757!2d88.36835527406548!3d22.500036279543455!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a02717524850f31%3A0xc62c891d5338f36b!2sOPT%20Hall%2C%20Jadavpur%20University!5e0!3m2!1sen!2sin!4v1722012699802!5m2!1sen!2sin"></iframe> 
                     </div>
                 </div>
             </section>
@@ -129,16 +159,33 @@
     <div class="credit typewriter-font">Copyright &#169; Jadavpur University Film Society | All Rights Reserved</div>
 </section>
 <!-- Footer End -->
-<a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
-    <!-- JavaScript Libraries -->
+<!-- Back to Top -->
+<a href="#" class="btn btn-lg btn-primary btn-about-top"><i class="bi bi-arrow-up"></i></a>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="lib/wow/wow.min.js"></script>
     <script src="lib/easing/easing.min.js"></script>
     <script src="lib/waypoints/waypoints.min.js"></script>
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-    <!-- Template Javascript -->
     <script src="js/main.js"></script>
     <script src="js/script.js"></script>
+    <!-- Back to top JS code for About, Magazine, Past events and Contact Page -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var backToTopButton = document.querySelector('.btn-about-top');
+            window.addEventListener('scroll', function () {
+                if (window.scrollY > 100) 
+                { 
+                    backToTopButton.style.display = 'flex';
+                } else {
+                    backToTopButton.style.display = 'none';
+                }
+            }); 
+            backToTopButton.addEventListener('click', function (e) {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        });
+    </script>
 </body>
 </html>
